@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Asma (Zehra) 🎀</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Great+Vibes&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+  :root{
+    --pink:#FFC0CB;
+    --pink-deep:#F49AC2;
+    --rose-gold:#C98A94;
+    --rose-gold-light:#E9BFB2;
+    --lavender:#E6E6FA;
+    --peach:#FFDAB9;
+    --plum:#5B3350;
+    --plum-soft:#7A4A67;
+    --white:#FFFFFF;
+    --glass:rgba(255,255,255,0.35);
+    --glass-border:rgba(255,255,255,0.55);
+    --shadow-glow:0 8px 32px rgba(199,120,150,0.25);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Poppins',sans-serif;
+    color:var(--plum);
+    background:linear-gradient(-45deg,#FFF0F5,#FFE4EC,#F3E8FA,#FFEAD9,#FFF0F5);
+    background-size:400% 400%;
+    animation:gradientShift 22s ease infinite;
+    overflow-x:hidden;
+    min-height:100vh;
+    position:relative;
+  }
+
+  @keyframes gradientShift{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;}
+
+  .script{font-family:'Great Vibes',cursive;}
+
+  ::selection{background:var(--pink-deep);color:#fff;}
+
+  /* ---------- Scrollbar ---------- */
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:transparent;}
+  ::-webkit-scrollbar-thumb{background:linear-gradient(var(--pink-deep),var(--rose-gold));border-radius:10px;}
+
+  /* ---------- Particle Layer ---------- */
+  #particle-layer{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:2;
+    overflow:hidden;
+  }
+  .particle{
+    position:absolute;
+    bottom:-10%;
+    opacity:0;
+    animation-name:floatUp;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    will-change:transform,opacity;
+    user-select:none;
+  }
+  @keyframes floatUp{
+    0%{transform:translateY(0) translateX(0) rotate(0deg) scale(0.8);opacity:0;}
+    8%{opacity:0.9;}
+    50%{transform:translateY(-55vh) translateX(20px) rotate(180deg) scale(1);}
+    92%{opacity:0.7;}
+    100%{transform:translateY(-115vh) translateX(-15px) rotate(360deg) scale(0.9);opacity:0;}
+  }
+
+  /* ---------- Hero ---------- */
+  #hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 24px 80px;
+    z-index:3;
+  }
+  #three-canvas{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    opacity:0.95;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:4;
+    max-width:780px;
+    padding:56px 40px;
+    background:var(--glass);
+    border:1px solid var(--glass-border);
+    border-radius:32px;
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow:var(--shadow-glow);
+    animation:cardRise 1.4s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes cardRise{
+    0%{opacity:0;transform:translateY(40px) scale(0.96);}
+    100%{opacity:1;transform:translateY(0) scale(1);}
+  }
+  .eyebrow{
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:12px;
+    color:var(--rose-gold);
+    font-weight:500;
+    margin-bottom:18px;
+    opacity:0;
+    animation:fadeIn 1s ease 0.3s forwards;
+  }
+  .hero-heading{
+    font-size:clamp(28px,5vw,52px);
+    line-height:1.25;
+    color:var(--plum);
+    text-shadow:0 2px 18px rgba(255,192,203,0.6);
+    opacity:0;
+    animation:fadeIn 1s ease 0.5s forwards;
+  }
+  .hero-name{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(48px,9vw,96px);
+    background:linear-gradient(90deg,var(--rose-gold),var(--pink-deep) 45%,var(--rose-gold));
+    background-size:200% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:shine 5s linear infinite, fadeIn 1s ease 0.8s forwards;
+    opacity:0;
+    margin:8px 0 20px;
+    display:block;
+  }
+  @keyframes shine{
+    to{background-position:200% center;}
+  }
+  @keyframes fadeIn{
+    to{opacity:1;}
+  }
+  .hero-sub{
+    font-size:clamp(14px,2vw,18px);
+    line-height:1.9;
+    color:var(--plum-soft);
+    font-weight:300;
+    max-width:560px;
+    margin:0 auto;
+    opacity:0;
+    animation:fadeIn 1s ease 1.1s forwards;
+  }
+  .hero-sub b{font-weight:500;color:var(--plum);}
+
+  .scroll-indicator{
+    position:absolute;
+    bottom:34px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:4;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    color:var(--rose-gold);
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    opacity:0;
+    animation:fadeIn 1s ease 1.6s forwards;
+  }
+  .scroll-mouse{
+    width:24px;
+    height:38px;
+    border:2px solid var(--rose-gold);
+    border-radius:14px;
+    position:relative;
+  }
+  .scroll-mouse::before{
+    content:'';
+    position:absolute;
+    top:6px;
+    left:50%;
+    transform:translateX(-50%);
+    width:4px;
+    height:8px;
+    border-radius:2px;
+    background:var(--rose-gold);
+    animation:scrollDot 1.6s ease infinite;
+  }
+  @keyframes scrollDot{
+    0%{opacity:1;top:6px;}
+    70%{opacity:0;}
+    100%{opacity:0;top:20px;}
+  }
+
+  /* ---------- Section Shared ---------- */
+  section{
+    position:relative;
+    z-index:3;
+    padding:110px 24px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .section-heading{
+    text-align:center;
+    font-size:clamp(26px,4vw,42px);
+    color:var(--plum);
+    margin-bottom:14px;
+  }
+  .section-heading span{color:var(--rose-gold);}
+  .section-sub{
+    text-align:center;
+    color:var(--plum-soft);
+    font-weight:300;
+    max-width:520px;
+    margin:0 auto 56px;
+    font-size:15px;
+  }
+  .reveal{
+    opacity:0;
+    transform:translateY(36px);
+    transition:opacity 0.9s cubic-bezier(.2,.8,.2,1), transform 0.9s cubic-bezier(.2,.8,.2,1);
+  }
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* ---------- Countdown ---------- */
+  #countdown-section{text-align:center;}
+  .countdown-card{
+    display:inline-block;
+    background:var(--glass);
+    border:1px solid var(--glass-border);
+    border-radius:28px;
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    padding:48px 40px;
+    box-shadow:var(--shadow-glow);
+    min-width:min(90vw,640px);
+  }
+  .countdown-grid{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+  .countdown-unit{
+    background:linear-gradient(160deg,rgba(255,255,255,0.6),rgba(255,192,203,0.35));
+    border:1px solid rgba(255,255,255,0.6);
+    border-radius:18px;
+    padding:20px 22px;
+    min-width:88px;
+    box-shadow:0 6px 18px rgba(199,120,150,0.18);
+  }
+  .countdown-num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(30px,5vw,44px);
+    font-weight:600;
+    color:var(--rose-gold);
+    line-height:1;
+  }
+  .countdown-label{
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--plum-soft);
+    margin-top:6px;
+  }
+  .today-banner{
+    font-size:clamp(22px,4vw,34px);
+    color:var(--plum);
+  }
+  .today-emoji{font-size:56px;display:block;margin-bottom:12px;animation:bounce 2s ease infinite;}
+  @keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-14px);}
+  }
+
+  /* ---------- Wishes ---------- */
+  .wishes-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:26px;
+  }
+  .wish-card{
+    background:var(--glass);
+    border:1px solid var(--glass-border);
+    border-radius:24px;
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    padding:34px 28px;
+    box-shadow:0 6px 24px rgba(199,120,150,0.15);
+    transition:transform 0.45s ease, box-shadow 0.45s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .wish-card::before{
+    content:'';
+    position:absolute;
+    top:-40%;
+    left:-40%;
+    width:180%;
+    height:180%;
+    background:radial-gradient(circle,rgba(255,255,255,0.5),transparent 60%);
+    opacity:0;
+    transition:opacity 0.5s ease;
+  }
+  .wish-card:hover{
+    transform:translateY(-8px) scale(1.015);
+    box-shadow:0 16px 40px rgba(199,120,150,0.3);
+  }
+  .wish-card:hover::before{opacity:1;}
+  .wish-icon{font-size:26px;margin-bottom:14px;display:block;}
+  .wish-text{
+    font-size:15.5px;
+    line-height:1.75;
+    color:var(--plum-soft);
+    font-weight:300;
+    position:relative;
+    z-index:1;
+  }
+
+  /* ---------- Surprise ---------- */
+  #surprise-section{text-align:center;}
+  .surprise-btn{
+    position:relative;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    padding:22px 52px;
+    font-family:'Poppins',sans-serif;
+    font-size:17px;
+    font-weight:500;
+    letter-spacing:0.5px;
+    color:#fff;
+    background:linear-gradient(135deg,var(--pink-deep),var(--rose-gold));
+    border-radius:60px;
+    box-shadow:0 0 0 0 rgba(244,154,194,0.6), 0 10px 30px rgba(199,120,150,0.4);
+    animation:glowPulse 2.6s ease-in-out infinite;
+    transition:transform 0.3s ease;
+  }
+  .surprise-btn:hover{transform:translateY(-4px) scale(1.03);}
+  .surprise-btn:active{transform:scale(0.97);}
+  @keyframes glowPulse{
+    0%{box-shadow:0 0 0 0 rgba(244,154,194,0.55), 0 10px 30px rgba(199,120,150,0.4);}
+    70%{box-shadow:0 0 0 22px rgba(244,154,194,0), 0 10px 30px rgba(199,120,150,0.4);}
+    100%{box-shadow:0 0 0 0 rgba(244,154,194,0), 0 10px 30px rgba(199,120,150,0.4);}
+  }
+
+  .surprise-reveal{
+    margin-top:44px;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    padding:40px 36px;
+    background:var(--glass);
+    border:1px solid var(--glass-border);
+    border-radius:28px;
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    box-shadow:var(--shadow-glow);
+    opacity:0;
+    transform:scale(0.85) translateY(20px);
+    transition:opacity 0.7s cubic-bezier(.2,.8,.2,1), transform 0.7s cubic-bezier(.2,.8,.2,1);
+    pointer-events:none;
+  }
+  .surprise-reveal.show{
+    opacity:1;
+    transform:scale(1) translateY(0);
+    pointer-events:auto;
+  }
+  .surprise-reveal h3{
+    font-size:clamp(22px,4vw,30px);
+    color:var(--plum);
+    margin-bottom:14px;
+  }
+  .surprise-reveal p{
+    color:var(--plum-soft);
+    font-weight:300;
+    line-height:1.8;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    position:relative;
+    z-index:3;
+    text-align:center;
+    padding:50px 24px 60px;
+    color:var(--plum-soft);
+    font-weight:300;
+    font-size:14px;
+  }
+  .beating-heart{
+    display:inline-block;
+    animation:beat 1.1s ease-in-out infinite;
+  }
+  @keyframes beat{
+    0%,100%{transform:scale(1);}
+    25%{transform:scale(1.25);}
+    40%{transform:scale(1);}
+  }
+
+  /* ---------- Music Player ---------- */
+  #music-player{
+    position:fixed;
+    bottom:22px;
+    right:22px;
+    z-index:50;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--glass);
+    border:1px solid var(--glass-border);
+    border-radius:50px;
+    padding:10px 16px;
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:var(--shadow-glow);
+  }
+  #music-toggle{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+    background:linear-gradient(135deg,var(--pink-deep),var(--rose-gold));
+    color:#fff;
+    font-size:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  #music-icon{font-size:15px;}
+  #volume-slider{
+    width:80px;
+    accent-color:var(--rose-gold);
+    cursor:pointer;
+  }
+  .music-label{
+    font-size:11px;
+    color:var(--plum-soft);
+    white-space:nowrap;
+    display:none;
+  }
+  @media(min-width:640px){
+    .music-label{display:inline;}
+  }
+
+  /* ---------- Confetti / Fireworks Canvas ---------- */
+  #fx-canvas{
+    position:fixed;
+    inset:0;
+    z-index:60;
+    pointer-events:none;
+  }
+
+  /* ---------- Balloons (surprise) ---------- */
+  .rising-balloon{
+    position:fixed;
+    bottom:-120px;
+    width:46px;
+    height:58px;
+    border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+    z-index:55;
+    pointer-events:none;
+    animation:riseUp 6.5s ease-in forwards;
+  }
+  .rising-balloon::after{
+    content:'';
+    position:absolute;
+    bottom:-26px;
+    left:50%;
+    width:1px;
+    height:26px;
+    background:rgba(120,80,90,0.4);
+  }
+  @keyframes riseUp{
+    0%{transform:translateY(0) translateX(0) rotate(-4deg);opacity:1;}
+    50%{transform:translateY(-60vh) translateX(30px) rotate(4deg);}
+    100%{transform:translateY(-115vh) translateX(-20px) rotate(-3deg);opacity:0;}
+  }
+
+  @media (max-width:640px){
+    .hero-inner{padding:40px 24px;border-radius:24px;}
+    section{padding:80px 20px;}
+    .countdown-card{padding:32px 20px;}
+    #music-player{padding:8px 12px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+</style>
+</head>
+<body>
+
+<div id="particle-layer"></div>
+<canvas id="fx-canvas"></canvas>
+
+<!-- ============ HERO ============ -->
+<section id="hero">
+  <canvas id="three-canvas"></canvas>
+  <div class="hero-inner">
+    <div class="eyebrow">A little something from your brother</div>
+    <h1 class="hero-heading">Happy Birthday, My Dearest Sister ❤️</h1>
+    <span class="hero-name script">Asma (Zehra)</span>
+    <p class="hero-sub">
+      May your smile always shine brighter than the stars.<br>
+      Happy Birthday, my wonderful sister.
+    </p>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-mouse"></div>
+  </div>
+</section>
+
+<!-- ============ COUNTDOWN ============ -->
+<section id="countdown-section">
+  <h2 class="section-heading reveal">Counting Down to <span>Your Day</span></h2>
+  <p class="section-sub reveal">Every second brings us closer to celebrating you.</p>
+  <div class="countdown-card reveal" id="countdown-card">
+    <!-- filled by JS -->
+  </div>
+</section>
+
+<!-- ============ WISHES ============ -->
+<section id="wishes-section">
+  <h2 class="section-heading reveal">Wishes From <span>My Heart</span></h2>
+  <p class="section-sub reveal">A few small words for someone who means so much.</p>
+  <div class="wishes-grid" id="wishes-grid"></div>
+</section>
+
+<!-- ============ SURPRISE ============ -->
+<section id="surprise-section">
+  <h2 class="section-heading reveal">One Last <span>Surprise</span></h2>
+  <p class="section-sub reveal">Go on... you deserve it.</p>
+  <button class="surprise-btn reveal" id="surprise-btn">🎁 Open Your Surprise</button>
+  <div class="surprise-reveal" id="surprise-reveal">
+    <h3>Happy Birthday Asma (Zehra)! ❤️</h3>
+    <p>You are loved more than words can express. Today and always, I hope you feel every bit of the joy, warmth, and light you give to everyone around you.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  Made with <span class="beating-heart">❤️</span> by your brother
+</footer>
+
+<!-- ============ MUSIC PLAYER ============ -->
+<div id="music-player">
+  <button id="music-toggle" aria-label="Play or pause music">
+    <span id="music-icon">▶</span>
+  </button>
+  <input type="range" id="volume-slider" min="0" max="100" value="35">
+  <span class="music-label">Birthday tune</span>
+</div>
+
+<script>
+/* =========================================================
+   0. GLOBAL SETUP
+========================================================= */
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* =========================================================
+   1. AMBIENT PARTICLES (hearts, sparkles, bubbles, flowers, stars)
+========================================================= */
+(function initParticles(){
+  const layer = document.getElementById('particle-layer');
+  const glyphs = ['💗','✨','🩷','⭐','🌸','🫧','💫','🤍'];
+  const count = prefersReducedMotion ? 0 : (window.innerWidth < 640 ? 16 : 28);
+
+  for(let i=0;i<count;i++){
+    const el = document.createElement('div');
+    el.className = 'particle';
+    el.textContent = glyphs[Math.floor(Math.random()*glyphs.length)];
+    const size = 12 + Math.random()*18;
+    el.style.left = Math.random()*100 + 'vw';
+    el.style.fontSize = size + 'px';
+    el.style.animationDuration = (10 + Math.random()*14) + 's';
+    el.style.animationDelay = (Math.random()*14) + 's';
+    el.style.filter = 'drop-shadow(0 0 6px rgba(255,192,203,0.6))';
+    layer.appendChild(el);
+  }
+})();
+
+/* =========================================================
+   2. THREE.JS HERO SCENE
+========================================================= */
+(function initThree(){
+  const canvas = document.getElementById('three-canvas');
+  if(!window.THREE) return;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth/canvas.clientHeight, 0.1, 100);
+  camera.position.set(0, 0, 11);
+
+  const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  function resize(){
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w/h;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // Lights
+  scene.add(new THREE.AmbientLight(0xffffff, 0.9));
+  const point = new THREE.PointLight(0xffe3ee, 1.4, 30);
+  point.position.set(3,4,6);
+  scene.add(point);
+  const flameLight = new THREE.PointLight(0xffcf8a, 1.2, 6);
+  flameLight.position.set(0, 3.05, 0);
+
+  const rootGroup = new THREE.Group();
+  scene.add(rootGroup);
+
+  // ---- Cake (center signature piece) ----
+  const cakeGroup = new THREE.Group();
+  const roseGold = new THREE.MeshStandardMaterial({color:0xE9BFB2, roughness:0.35, metalness:0.25});
+  const pinkIcing = new THREE.MeshStandardMaterial({color:0xFFC0CB, roughness:0.4, metalness:0.1});
+  const cream = new THREE.MeshStandardMaterial({color:0xFFF6F2, roughness:0.5});
+
+  const tierGeo1 = new THREE.CylinderGeometry(1.9, 2.0, 0.9, 40);
+  const tier1 = new THREE.Mesh(tierGeo1, pinkIcing);
+  tier1.position.y = -1.1;
+  cakeGroup.add(tier1);
+
+  const tierGeo2 = new THREE.CylinderGeometry(1.35, 1.45, 0.85, 40);
+  const tier2 = new THREE.Mesh(tierGeo2, cream);
+  tier2.position.y = -0.15;
+  cakeGroup.add(tier2);
+
+  const tierGeo3 = new THREE.CylinderGeometry(0.85, 0.95, 0.75, 40);
+  const tier3 = new THREE.Mesh(tierGeo3, roseGold);
+  tier3.position.y = 0.75;
+  cakeGroup.add(tier3);
+
+  // candle
+  const candle = new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,0.55,12), cream);
+  candle.position.y = 1.4;
+  cakeGroup.add(candle);
+  const flame = new THREE.Mesh(
+    new THREE.SphereGeometry(0.09, 12, 12),
+    new THREE.MeshStandardMaterial({color:0xFFD27A, emissive:0xFFA53E, emissiveIntensity:1.6})
+  );
+  flame.position.y = 1.72;
+  cakeGroup.add(flame);
+  cakeGroup.add(flameLight);
+
+  // pearls trim
+  for(let i=0;i<18;i++){
+    const angle = (i/18)*Math.PI*2;
+    const pearl = new THREE.Mesh(new THREE.SphereGeometry(0.07,10,10), new THREE.MeshStandardMaterial({color:0xffffff, roughness:0.2, metalness:0.4}));
+    pearl.position.set(Math.cos(angle)*1.42, 0.3, Math.sin(angle)*1.42);
+    cakeGroup.add(pearl);
+  }
+
+  cakeGroup.position.set(0, -0.4, 0);
+  rootGroup.add(cakeGroup);
+
+  // ---- Floating hearts ----
+  function heartShape(){
+    const shape = new THREE.Shape();
+    const x=0,y=0;
+    shape.moveTo(x, y);
+    shape.bezierCurveTo(x, y-0.4, x-0.6, y-0.4, x-0.6, y);
+    shape.bezierCurveTo(x-0.6, y+0.35, x, y+0.5, x, y+0.85);
+    shape.bezierCurveTo(x, y+0.5, x+0.6, y+0.35, x+0.6, y);
+    shape.bezierCurveTo(x+0.6, y-0.4, x, y-0.4, x, y);
+    return shape;
+  }
+  const heartGeo = new THREE.ExtrudeGeometry(heartShape(), {depth:0.14, bevelEnabled:true, bevelThickness:0.03, bevelSize:0.03, bevelSegments:2});
+  heartGeo.scale(0.55,0.55,0.55);
+  const heartMat = new THREE.MeshStandardMaterial({color:0xF49AC2, roughness:0.3, metalness:0.15, emissive:0xF49AC2, emissiveIntensity:0.15});
+
+  const floaters = [];
+  const heartCount = window.innerWidth < 640 ? 4 : 6;
+  for(let i=0;i<heartCount;i++){
+    const h = new THREE.Mesh(heartGeo, heartMat);
+    h.rotation.z = Math.PI;
+    h.position.set((Math.random()-0.5)*8, (Math.random()-0.5)*5+0.5, (Math.random()-0.5)*4-1);
+    h.userData.speed = 0.4 + Math.random()*0.4;
+    h.userData.offset = Math.random()*Math.PI*2;
+    rootGroup.add(h);
+    floaters.push(h);
+  }
+
+  // ---- Stars ----
+  const starMat = new THREE.MeshStandardMaterial({color:0xFFE9C7, emissive:0xFFD27A, emissiveIntensity:0.6, roughness:0.4});
+  const starCount = window.innerWidth < 640 ? 5 : 9;
+  for(let i=0;i<starCount;i++){
+    const s = new THREE.Mesh(new THREE.OctahedronGeometry(0.13, 0), starMat);
+    s.position.set((Math.random()-0.5)*10, (Math.random()-0.5)*6+1, (Math.random()-0.5)*6-2);
+    s.userData.speed = 0.3 + Math.random()*0.5;
+    s.userData.offset = Math.random()*Math.PI*2;
+    rootGroup.add(s);
+    floaters.push(s);
+  }
+
+  // ---- Balloons (simple sphere + string) ----
+  const balloonColors = [0xFFC0CB, 0xE6E6FA, 0xFFDAB9, 0xF49AC2];
+  const balloonCount = window.innerWidth < 640 ? 2 : 4;
+  for(let i=0;i<balloonCount;i++){
+    const bMat = new THREE.MeshStandardMaterial({color: balloonColors[i % balloonColors.length], roughness:0.25, metalness:0.05});
+    const balloon = new THREE.Mesh(new THREE.SphereGeometry(0.42, 24, 24), bMat);
+    balloon.scale.set(1, 1.25, 1);
+    balloon.position.set((Math.random()-0.5)*9, (Math.random()-0.5)*5+1.5, (Math.random()-0.5)*5-2);
+    balloon.userData.speed = 0.25 + Math.random()*0.35;
+    balloon.userData.offset = Math.random()*Math.PI*2;
+    rootGroup.add(balloon);
+    floaters.push(balloon);
+  }
+
+  let mouseX = 0, mouseY = 0;
+  window.addEventListener('mousemove', (e)=>{
+    mouseX = (e.clientX / window.innerWidth - 0.5);
+    mouseY = (e.clientY / window.innerHeight - 0.5);
+  });
+
+  const clock = new THREE.Clock();
+  function animate(){
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+
+    cakeGroup.rotation.y = t * 0.35;
+    flame.position.y = 1.72 + Math.sin(t*10)*0.02;
+    flame.scale.setScalar(1 + Math.sin(t*14)*0.08);
+
+    floaters.forEach(f=>{
+      f.position.y += Math.sin(t*f.userData.speed + f.userData.offset) * 0.0035;
+      f.rotation.y += 0.004;
+    });
+
+    rootGroup.rotation.y += (mouseX*0.4 - rootGroup.rotation.y*0.05) * 0.02;
+    rootGroup.rotation.x += (-mouseY*0.15 - rootGroup.rotation.x*0.05) * 0.02;
+
+    renderer.render(scene, camera);
+  }
+  if(!prefersReducedMotion){ animate(); } else { renderer.render(scene, camera); }
+})();
+
+/* =========================================================
+   3. SCROLL REVEAL
+========================================================= */
+(function initReveal(){
+  const els = document.querySelectorAll('.reveal, .wish-card');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15});
+  els.forEach(el=>io.observe(el));
+})();
+
+/* =========================================================
+   4. WISHES CONTENT
+========================================================= */
+(function buildWishes(){
+  const wishes = [
+    {icon:'🤲', text:'May Allah bless you with endless happiness.'},
+    {icon:'🌙', text:'May every dream you have come true.'},
+    {icon:'😊', text:'May your smile never fade.'},
+    {icon:'💖', text:'You deserve all the love and happiness in the world.'},
+    {icon:'👑', text:"You'll always be my favorite sister."},
+    {icon:'🌸', text:"I'm grateful to have you in my life."}
+  ];
+  const grid = document.getElementById('wishes-grid');
+  wishes.forEach((w, i)=>{
+    const card = document.createElement('div');
+    card.className = 'wish-card reveal';
+    card.style.transitionDelay = (i*0.08) + 's';
+    card.innerHTML = `<span class="wish-icon">${w.icon}</span><p class="wish-text">${w.text}</p>`;
+    grid.appendChild(card);
+  });
+})();
+
+/* =========================================================
+   5. COUNTDOWN LOGIC  (Birthday: July 8)
+========================================================= */
+(function initCountdown(){
+  const card = document.getElementById('countdown-card');
+  const BDAY_MONTH = 6; // 0-indexed => July
+  const BDAY_DAY = 8;
+
+  function isBirthdayToday(){
+    const now = new Date();
+    return now.getMonth() === BDAY_MONTH && now.getDate() === BDAY_DAY;
+  }
+
+  function getNextBirthday(){
+    const now = new Date();
+    let year = now.getFullYear();
+    let target = new Date(year, BDAY_MONTH, BDAY_DAY, 0, 0, 0);
+    if(target < now && !isBirthdayToday()){
+      target = new Date(year+1, BDAY_MONTH, BDAY_DAY, 0, 0, 0);
+    }
+    return target;
+  }
+
+  function renderToday(){
+    card.innerHTML = `
+      <span class="today-emoji">🎉</span>
+      <div class="today-banner">Today is Your Special Day!</div>
+      <div style="font-size:44px;margin-top:14px;">🎂</div>
+    `;
+    launchConfettiBurst();
+  }
+
+  function renderCountdown(){
+    const target = getNextBirthday();
+    card.innerHTML = `
+      <div class="countdown-grid">
+        <div class="countdown-unit"><div class="countdown-num" id="cd-days">0</div><div class="countdown-label">Days</div></div>
+        <div class="countdown-unit"><div class="countdown-num" id="cd-hours">0</div><div class="countdown-label">Hours</div></div>
+        <div class="countdown-unit"><div class="countdown-num" id="cd-mins">0</div><div class="countdown-label">Minutes</div></div>
+        <div class="countdown-unit"><div class="countdown-num" id="cd-secs">0</div><div class="countdown-label">Seconds</div></div>
+      </div>
+    `;
+    function tick(){
+      const now = new Date();
+      if(isBirthdayToday()){ renderToday(); return; }
+      const diff = target - now;
+      if(diff <= 0){ renderToday(); return; }
+      const d = Math.floor(diff/(1000*60*60*24));
+      const h = Math.floor((diff/(1000*60*60))%24);
+      const m = Math.floor((diff/(1000*60))%60);
+      const s = Math.floor((diff/1000)%60);
+      const dayEl = document.getElementById('cd-days');
+      if(!dayEl) return;
+      dayEl.textContent = d;
+      document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+      document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+      document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+      requestAnimationFrame(()=>setTimeout(tick, 1000));
+    }
+    tick();
+  }
+
+  if(isBirthdayToday()){ renderToday(); } else { renderCountdown(); }
+})();
+
+/* =========================================================
+   6. CONFETTI + FIREWORKS CANVAS ENGINE
+========================================================= */
+const fxCanvas = document.getElementById('fx-canvas');
+const fxCtx = fxCanvas.getContext('2d');
+function resizeFx(){ fxCanvas.width = window.innerWidth; fxCanvas.height = window.innerHeight; }
+window.addEventListener('resize', resizeFx);
+resizeFx();
+
+const fxColors = ['#F49AC2','#FFC0CB','#E6E6FA','#FFDAB9','#C98A94','#FFFFFF'];
+let confettiParticles = [];
+let fireworkParticles = [];
+let fxRunning = false;
+
+function spawnConfetti(amount){
+  for(let i=0;i<amount;i++){
+    confettiParticles.push({
+      x: Math.random()*fxCanvas.width,
+      y: -20 - Math.random()*200,
+      w: 6+Math.random()*6,
+      h: 10+Math.random()*8,
+      color: fxColors[Math.floor(Math.random()*fxColors.length)],
+      vy: 2+Math.random()*3,
+      vx: (Math.random()-0.5)*2,
+      rot: Math.random()*360,
+      vr: (Math.random()-0.5)*10,
+      life: 0,
+      maxLife: 300+Math.random()*120
+    });
+  }
+}
+
+function spawnFirework(cx, cy){
+  const count = 34;
+  const color = fxColors[Math.floor(Math.random()*fxColors.length)];
+  for(let i=0;i<count;i++){
+    const angle = (i/count)*Math.PI*2;
+    const speed = 2 + Math.random()*3;
+    fireworkParticles.push({
+      x: cx, y: cy,
+      vx: Math.cos(angle)*speed,
+      vy: Math.sin(angle)*speed,
+      color,
+      life: 0,
+      maxLife: 60+Math.random()*30
+    });
+  }
+}
+
+function fxLoop(){
+  fxCtx.clearRect(0,0,fxCanvas.width,fxCanvas.height);
+
+  confettiParticles.forEach(p=>{
+    p.life++;
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.02;
+    p.rot += p.vr;
+    fxCtx.save();
+    fxCtx.translate(p.x, p.y);
+    fxCtx.rotate(p.rot*Math.PI/180);
+    fxCtx.fillStyle = p.color;
+    fxCtx.globalAlpha = Math.max(0, 1 - p.life/p.maxLife);
+    fxCtx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+    fxCtx.restore();
+  });
+  confettiParticles = confettiParticles.filter(p=>p.life < p.maxLife && p.y < fxCanvas.height+40);
+
+  fireworkParticles.forEach(p=>{
+    p.life++;
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.03;
+    fxCtx.beginPath();
+    fxCtx.fillStyle = p.color;
+    fxCtx.globalAlpha = Math.max(0, 1 - p.life/p.maxLife);
+    fxCtx.arc(p.x, p.y, 2.6, 0, Math.PI*2);
+    fxCtx.fill();
+  });
+  fireworkParticles = fireworkParticles.filter(p=>p.life < p.maxLife);
+
+  fxCtx.globalAlpha = 1;
+
+  if(confettiParticles.length || fireworkParticles.length){
+    requestAnimationFrame(fxLoop);
+  } else {
+    fxRunning = false;
+  }
+}
+
+function ensureFxLoop(){
+  if(!fxRunning){ fxRunning = true; requestAnimationFrame(fxLoop); }
+}
+
+function launchConfettiBurst(){
+  if(prefersReducedMotion) return;
+  spawnConfetti(90);
+  ensureFxLoop();
+}
+
+function launchFireworksShow(){
+  if(prefersReducedMotion) return;
+  let bursts = 0;
+  const interval = setInterval(()=>{
+    spawnFirework(
+      fxCanvas.width*(0.2+Math.random()*0.6),
+      fxCanvas.height*(0.15+Math.random()*0.35)
+    );
+    ensureFxLoop();
+    bursts++;
+    if(bursts >= 5) clearInterval(interval);
+  }, 350);
+}
+
+/* =========================================================
+   7. RISING BALLOONS
+========================================================= */
+function launchBalloons(count){
+  const colors = ['#FFC0CB','#F49AC2','#E6E6FA','#FFDAB9','#C98A94'];
+  for(let i=0;i<count;i++){
+    setTimeout(()=>{
+      const b = document.createElement('div');
+      b.className = 'rising-balloon';
+      b.style.left = (5 + Math.random()*90) + 'vw';
+      b.style.background = `radial-gradient(circle at 35% 30%, #fff8, ${colors[i%colors.length]})`;
+      document.body.appendChild(b);
+      setTimeout(()=>b.remove(), 7000);
+    }, i*180);
+  }
+}
+
+/* =========================================================
+   8. SURPRISE BUTTON
+========================================================= */
+document.getElementById('surprise-btn').addEventListener('click', function(){
+  const reveal = document.getElementById('surprise-reveal');
+  reveal.classList.add('show');
+  launchConfettiBurst();
+  launchFireworksShow();
+  if(!prefersReducedMotion) launchBalloons(8);
+  this.scrollIntoView({behavior:'smooth', block:'center'});
+});
+
+/* =========================================================
+   9. MUSIC — SYNTHESIZED SOFT "HAPPY BIRTHDAY" MELODY
+========================================================= */
+(function initMusic(){
+  const toggleBtn = document.getElementById('music-toggle');
+  const icon = document.getElementById('music-icon');
+  const slider = document.getElementById('volume-slider');
+
+  let audioCtx = null;
+  let masterGain = null;
+  let isPlaying = false;
+  let sequenceTimer = null;
+
+  // Melody of "Happy Birthday to You" — [note, beats]
+  const NOTE_FREQ = {
+    C4:261.63, D4:293.66, E4:329.63, F4:349.23, G4:392.00,
+    A4:440.00, B4:493.88, C5:523.25, D5:587.33
+  };
+  const melody = [
+    ['C4',0.75],['C4',0.25],['D4',1],['C4',1],['F4',1],['E4',2],
+    ['C4',0.75],['C4',0.25],['D4',1],['C4',1],['G4',1],['F4',2],
+    ['C4',0.75],['C4',0.25],['C5',1],['A4',1],['F4',1],['E4',1],['D4',2],
+    ['B4',0.75],['B4',0.25],['A4',1],['F4',1],['G4',1],['F4',2]
+  ];
+  const BEAT_MS = 380;
+
+  function ensureCtx(){
+    if(!audioCtx){
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      masterGain = audioCtx.createGain();
+      masterGain.gain.value = slider.value/100 * 0.25;
+      masterGain.connect(audioCtx.destination);
+    }
+  }
+
+  function playNote(freq, durationSec, startTime){
+    const osc = audioCtx.createOscillator();
+    const noteGain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+    noteGain.gain.setValueAtTime(0, startTime);
+    noteGain.gain.linearRampToValueAtTime(1, startTime + 0.05);
+    noteGain.gain.linearRampToValueAtTime(0, startTime + durationSec*0.95);
+    osc.connect(noteGain);
+    noteGain.connect(masterGain);
+    osc.start(startTime);
+    osc.stop(startTime + durationSec);
+  }
+
+  function playSequence(){
+    ensureCtx();
+    if(audioCtx.state === 'suspended') audioCtx.resume();
+    let t = audioCtx.currentTime + 0.1;
+    melody.forEach(([note, beats])=>{
+      const dur = beats * (BEAT_MS/1000);
+      playNote(NOTE_FREQ[note], dur, t);
+      t += dur;
+    });
+    const totalMs = (t - audioCtx.currentTime) * 1000;
+    sequenceTimer = setTimeout(()=>{ if(isPlaying) playSequence(); }, totalMs);
+  }
+
+  function startMusic(){
+    isPlaying = true;
+    icon.textContent = '❚❚';
+    playSequence();
+  }
+  function stopMusic(){
+    isPlaying = false;
+    icon.textContent = '▶';
+    clearTimeout(sequenceTimer);
+  }
+
+  toggleBtn.addEventListener('click', ()=>{
+    if(isPlaying) stopMusic(); else startMusic();
+  });
+
+  slider.addEventListener('input', ()=>{
+    if(masterGain) masterGain.gain.value = slider.value/100 * 0.25;
+  });
+
+  // Attempt gentle autoplay on first user interaction anywhere on the page
+  let started = false;
+  function tryAutostart(){
+    if(started) return;
+    started = true;
+    startMusic();
+    window.removeEventListener('click', tryAutostart);
+    window.removeEventListener('touchstart', tryAutostart);
+    window.removeEventListener('scroll', tryAutostart);
+  }
+  window.addEventListener('click', tryAutostart, {once:true});
+  window.addEventListener('touchstart', tryAutostart, {once:true});
+  window.addEventListener('scroll', tryAutostart, {once:true});
+})();
+</script>
+</body>
+</html>
